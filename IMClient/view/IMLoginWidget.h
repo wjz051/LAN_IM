@@ -9,7 +9,7 @@ Changes：
 #ifndef IMLOGINWIDGET_H
 #define IMLOGINWIDGET_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 class QPushButton;
 class QLabel;

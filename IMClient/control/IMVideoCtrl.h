@@ -5,10 +5,10 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <fcntl.h>
-#include <sys/ioctl.h>
-#include <sys/mman.h>
-#include <asm/types.h>
-#include <linux/videodev2.h>
+//#include <sys/ioctl.h>
+//#include <sys/mman.h>
+//#include <asm/types.h>
+//#include <linux/videodev2.h>
 #include <QString>
 #include <QObject>
 

@@ -42,7 +42,7 @@ int IMVideoCtrl::closeDevice()
 
 int IMVideoCtrl::initDevice()
 {
-    v4l2_capability cap;
+    /*v4l2_capability cap;
     v4l2_cropcap cropcap;
     v4l2_crop crop;
     v4l2_format fmt;
@@ -120,7 +120,7 @@ int IMVideoCtrl::initDevice()
     if(-1 == initMmap())
     {
         return -1;
-    }
+    }*/
 
     return 0;
 }
@@ -128,7 +128,7 @@ int IMVideoCtrl::initDevice()
 
 int IMVideoCtrl::initMmap()
 {
-    v4l2_requestbuffers req;
+    /*v4l2_requestbuffers req;
     CLEAR(req);
 
     req.count = 4;
@@ -191,13 +191,13 @@ int IMVideoCtrl::initMmap()
             emit displayError(tr("mmap %1").arg(QString(strerror(errno))));
             return -1;
         }
-    }
+    }*/
     return 0;
 }
 
 int IMVideoCtrl::startCapturing()
 {
-    unsigned int i;
+    /*unsigned int i;
     for(i = 0; i < m_nBuffers; ++i)
     {
         v4l2_buffer buf;
@@ -222,27 +222,27 @@ int IMVideoCtrl::startCapturing()
     {
         emit displayError(tr("VIDIOC_STREAMON: %1").arg(QString(strerror(errno))));
         return -1;
-    }
+    }*/
     return 0;
 }
 
 
 int IMVideoCtrl::stopCapturing()
 {
-    v4l2_buf_type type;
+    /*v4l2_buf_type type;
     type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
     if(-1 == ioctl(m_fd, VIDIOC_STREAMOFF, &type))
     {
         emit displayError(tr("VIDIOC_STREAMOFF: %1").arg(QString(strerror(errno))));
         return -1;
-    }
+    }*/
     return 0;
 }
 
 int IMVideoCtrl::uninitDevice()
 {
-    unsigned int i;
+    /*unsigned int i;
     for(i = 0; i < m_nBuffers; ++i)
     {
         if(-1 == munmap(m_buffers[i].m_start, m_buffers[i].m_length))
@@ -252,13 +252,13 @@ int IMVideoCtrl::uninitDevice()
         }
 
     }
-    free(m_buffers);
+    free(m_buffers);*/
     return 0;
 }
 
 int IMVideoCtrl::getFrame(void **frame_buf, size_t* len)
 {
-    v4l2_buffer queue_buf;
+    /*v4l2_buffer queue_buf;
     CLEAR(queue_buf);
 
     queue_buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
@@ -281,7 +281,7 @@ int IMVideoCtrl::getFrame(void **frame_buf, size_t* len)
 
     *frame_buf = m_buffers[queue_buf.index].m_start;
     *len = m_buffers[queue_buf.index].m_length;
-    m_index = queue_buf.index;
+    m_index = queue_buf.index;*/
 
     return 0;
 
@@ -289,7 +289,7 @@ int IMVideoCtrl::getFrame(void **frame_buf, size_t* len)
 
 int IMVideoCtrl::ungetFrame()
 {
-    if(m_index != -1)
+    /*if(m_index != -1)
     {
         v4l2_buffer queue_buf;
         CLEAR(queue_buf);
@@ -304,6 +304,6 @@ int IMVideoCtrl::ungetFrame()
             return -1;
         }
         return 0;
-    }
+    }*/
     return -1;
 }
