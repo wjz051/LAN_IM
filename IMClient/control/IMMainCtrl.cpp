@@ -471,7 +471,7 @@ void IMMainCtrl::requestGetFriendsInformation()
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(GET_ALL_FRIENDS) << m_myID << m_status;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -491,7 +491,7 @@ void IMMainCtrl::requestGetFlocksInformation(const QString & id)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(GET_ALL_FLOCKS) << id;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -510,7 +510,7 @@ void IMMainCtrl::requestGetDiscussionsInformation(const QString & id)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(GET_ALL_DISCUSSIONS) << id;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -530,7 +530,7 @@ void IMMainCtrl::requestGetFlockMembers(const QString & id)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(GET_FLOCK_MEMBERS) << id;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -550,7 +550,7 @@ void IMMainCtrl::requestGetDiscussionMembers(const QString & id)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(GET_DISCUSSIONS_MEMBERS) << id;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -568,7 +568,7 @@ void IMMainCtrl::requestGetFriendInformation(const QString &id)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(GET_FRIEND_INFORMATION) << id;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -586,7 +586,7 @@ void IMMainCtrl::requestGetMyInformation()
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(GET_MYSELF_INFORMATION) << m_myID;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -605,7 +605,7 @@ void IMMainCtrl::requestChangeMyInformation(const UserInformation &me)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(CHANGE_INFORMATION) << me;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -624,7 +624,7 @@ void IMMainCtrl::requestChangeMyStatus(const QString id, const int status)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(CHANGE_STATUE) << id << status;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -650,7 +650,7 @@ void IMMainCtrl::requestChangeFriendRemark(const QString & myID,
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(CHANGE_REMARK) << tempStr;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -670,7 +670,7 @@ void IMMainCtrl::requestDeleteFriend(const QString & myID,
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(DELETE_FRIEND) << myID << friendID;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -688,7 +688,7 @@ void IMMainCtrl::requestAddFriend(const TalkMessage & mes)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(ADD_FRIEND) << mes;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -706,7 +706,7 @@ void IMMainCtrl::requestAddFlock(const TalkMessage & mes)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(ADD_FLOCK) << mes;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -725,7 +725,7 @@ void IMMainCtrl::requestAddDiscussion(const TalkMessage & mes)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(ADD_DISCUSSION) << mes;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -743,7 +743,7 @@ void IMMainCtrl::requestDropFlock(const QString & userID, const QString & flockI
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(DROP_FLOCK) << userID << flockID;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -762,7 +762,7 @@ void IMMainCtrl::requestDropDiscussion(const QString & userID, const QString & d
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(DROP_DISCUSSION) << userID << discussionID;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -780,7 +780,7 @@ void IMMainCtrl::requestLeaveFlock(const QString & userID, const QString & flock
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(LEAVE_FLOCK) << userID << flockID;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -800,7 +800,7 @@ void IMMainCtrl::requestLeaveDiscussion(const QString & userID,
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(LEAVE_DISCUSSION) << userID << discussionID;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -818,7 +818,7 @@ void IMMainCtrl::requestCreateFlock(const TempStrings & tmpStr)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(CREATE_FLOCK) << tmpStr;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -837,7 +837,7 @@ void IMMainCtrl::requestCreateDiscussion(const TempStrings & tmpStr)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(CREATE_DISCUSSION) << tmpStr;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -856,7 +856,7 @@ void IMMainCtrl::requestSendResultOfFriendRequest(const TalkMessage & mes)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(ADD_FRIEND) << mes;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -875,7 +875,7 @@ void IMMainCtrl::requestSendResultOfFlockRequest(const TalkMessage & mes)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(ADD_FLOCK) << mes;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -895,7 +895,7 @@ void IMMainCtrl::requestChangeFlockInformation(const FlockInformation &flock)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(CHANGE_FLOCK) << flock;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -914,7 +914,7 @@ void IMMainCtrl::requestChangeFlockMemberRemark(const TempStrings & tmpStr)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(CHANGE_FLOCK_REMARK) << tmpStr;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -935,7 +935,7 @@ void IMMainCtrl::requestChangeDiscussionInformation(
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(CHANGE_DISCUSSION) << discussion;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -956,7 +956,7 @@ void IMMainCtrl::requestSendTalkMessage()
         m_blockSize = 0;
         QByteArray block;
         QDataStream out(&block, QIODevice::WriteOnly);
-        out.setVersion(QDataStream::Qt_4_8);
+        out.setVersion(QDataStream::Qt_5_9);
         out << quint16(0) << int(TALK)
             << m_messageVector.front();
         out.device()->seek(0);
@@ -979,7 +979,7 @@ void IMMainCtrl::requestRemoveBox(const QString & title)
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(REMOVE_BOX) << m_myID << title;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -997,7 +997,7 @@ void IMMainCtrl::requestRenameBox(const QString & oldTitle, const QString & newT
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(RENAME_BOX) << m_myID << oldTitle << newTitle;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -1018,7 +1018,7 @@ void IMMainCtrl::requestMoveFriendToBox(const QString & friendID,
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(MOVE_FRIEND_BOX) << m_myID << friendID << oldTitle << newTitle;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -1038,7 +1038,7 @@ void IMMainCtrl::requestGetNetWorkHistoryMessageOneFriendOneDate(
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(GET_HISTORY_MESSAGE) << m_myID << friendID << date;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -1063,7 +1063,7 @@ void IMMainCtrl::requestChangePwd(const QString & oldPwd, const QString & newPwd
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(CHANGE_PASSWORD) << tmpStr;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -1080,7 +1080,7 @@ void IMMainCtrl::readMessage()
         return;
 
     QDataStream in(m_tcpSocket);
-    in.setVersion(QDataStream::Qt_4_8);
+    in.setVersion(QDataStream::Qt_5_9);
     if (m_blockSize == 0)
     {
         if (m_tcpSocket->bytesAvailable() < (int)sizeof(quint16))

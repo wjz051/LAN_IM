@@ -39,7 +39,7 @@ bool IMClientFileCtrl::writeAutoLogin(const QString &fileName, const QString &id
         return false;
     }
     QDataStream out(&file);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << id << pwd << isAuto;
     file.close();
     return true;
@@ -63,7 +63,7 @@ bool IMClientFileCtrl::readAutoLogin(const QString &fileName,QString &id,
         return false;
     }
     QDataStream in(&file);
-    in.setVersion(QDataStream::Qt_4_8);
+    in.setVersion(QDataStream::Qt_5_9);
     in >>id >> pwd >> isAuto;
     file.close();
     return true;
@@ -179,7 +179,7 @@ void IMClientFileCtrl::saveTalkHistory(const QString filePath,
         return;
 
     QDataStream out(&file);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
 
     //如果聊天记录是空的，就不用保存了
     if(messagaShow->toPlainText().isEmpty())
@@ -212,7 +212,7 @@ void IMClientFileCtrl::readTalkHistory(const QString filePath,
 
     QString allRecord;
     QDataStream in(&file);
-    in.setVersion(QDataStream::Qt_4_8);
+    in.setVersion(QDataStream::Qt_5_9);
 
     QString tempString;
     //从文件中读取全部的字符串

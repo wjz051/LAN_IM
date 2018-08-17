@@ -64,7 +64,7 @@ void IMRegisterCtrl::requestRegister()
     m_blockSize = 0;
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_8);
+    out.setVersion(QDataStream::Qt_5_9);
     out << quint16(0) << int(REGISTER)  << m_user;
     out.device()->seek(0);
     out << quint16(block.size() - sizeof(quint16));
@@ -82,7 +82,7 @@ Changes： NULL
 void IMRegisterCtrl::readMessage()
 {
     QDataStream in(m_tcpSocket);
-    in.setVersion(QDataStream::Qt_4_8);
+    in.setVersion(QDataStream::Qt_5_9);
     if (m_blockSize == 0)
     {
         if (m_tcpSocket->bytesAvailable() < (int)sizeof(quint16))
