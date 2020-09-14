@@ -6,6 +6,7 @@
 #include <QMessageBox>
 int main(int argc, char *argv[])
 {
+    //显示
     QApplication a(argc, argv);
 
     // 以下部分解决中文乱码
